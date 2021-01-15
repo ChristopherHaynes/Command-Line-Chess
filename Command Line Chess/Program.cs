@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Command_Line_Chess
 {
@@ -6,7 +7,8 @@ namespace Command_Line_Chess
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.OutputEncoding = System.Text.Encoding.Unicode;
+            Game game = new Game();
         }
     }
 }
