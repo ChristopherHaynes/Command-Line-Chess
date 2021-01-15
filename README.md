@@ -23,7 +23,7 @@ For example:
 * _"mb8"_ - This would print all the possible moves for the piece currently in position "b8"
 * _"se1"_ - This would print the check and checkmate status of the king (given that the white king still resides on "e1")
 
-## Code Design
+## Application Design
 Before starting this project, I decided that I wanted to create a chess game without any direct represenation of the board itself. This meant
 that I did not use any arrays, lists, vectors etc to represent all the possible spaces on the board. Instead I decided to approach the game
 from the pieces perspective. This lead to an object orientated approach, with the "board" being represented as a dictionary where the
