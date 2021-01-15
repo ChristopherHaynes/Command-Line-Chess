@@ -34,7 +34,7 @@ All of the responsibility of printing to the console is handled by the BoardRend
 a more traditional co-ordinate system, so there are methods available to convert chess positions into x, y co-ordinates and vice verca.
 See the image below for a representation of how the chess positions relate to the co-ordinate system.
 
-!Chess Board Positions and Co-Ordinates(https://github.com/ChristopherHaynes/Command-Line-Chess/master/ChessBoardLayout.png?raw=true)
+!Chess Board Positions and Co-Ordinates(Command Line Chess/res/ChessBoardLayout.png?raw=true)
 
 ## Currently Missing Features
 There are currently 4 known missing features which are part of the standard game of chess. These are listed in order of priority.
