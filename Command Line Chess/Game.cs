@@ -47,18 +47,13 @@ namespace Command_Line_Chess
 
                 // Redraw the board and await user input
                 BoardRender.PrintBoardFromDict(piecePositions);
-                if (isWhiteTurn) { Console.WriteLine("***** WHITE TURN *****"); }
-                else { Console.WriteLine("***** BLACK TURN *****"); }
-                if (isCheck) { Console.WriteLine("You are in Check!"); }
-                Console.Write("Please enter your move: ");
+                PrintTurnText();
 
                 // Check the validity of the entered move
                 string userMove;               
                 while (!IsValidUserInput(userMove = Console.ReadLine().Trim().ToLower()))
                 {
-                    if (isWhiteTurn) { Console.WriteLine("***** WHITE TURN *****"); }
-                    else { Console.WriteLine("***** BLACK TURN *****"); }
-                    Console.Write("Please enter your move: ");
+                    PrintTurnText();
                 }
 
                 // Complete the move
@@ -249,6 +244,14 @@ namespace Command_Line_Chess
             Console.Write("\nPress any key to continue...");
             Console.ReadKey();
             BoardRender.PrintBoardFromDict(piecePositions);
+        }
+
+        private void PrintTurnText()
+        {
+            if (isWhiteTurn) { Console.WriteLine("***** WHITE TURN *****"); }
+            else { Console.WriteLine("***** BLACK TURN *****"); }
+            if (isCheck) { Console.WriteLine("You are in Check!"); }
+            Console.Write("Please enter your move: ");
         }
 
         //DEBUG - Used for testing rules and debugging purposes
