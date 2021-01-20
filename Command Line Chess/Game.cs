@@ -61,6 +61,9 @@ namespace Command_Line_Chess
                 string endPosition = "" + userMove[2] + userMove[3];
                 piecePositions[startPosition].Move(endPosition);
 
+                // Check for pawn promotion
+                SearchForPawnPromotion();
+
                 // Flip the turn to the other player
                 isWhiteTurn = !isWhiteTurn;
 
@@ -197,6 +200,72 @@ namespace Command_Line_Chess
             piecePositions.Add(endPosition, piece);
         }
 
+        private void SearchForPawnPromotion()
+        {
+            for (int x = 0; x < 8; x++)
+            {
+                if (piecePositions.ContainsKey(BoardRender.GridReferenceToChessPosition(x, 0)) &&
+                    piecePositions[BoardRender.GridReferenceToChessPosition(x, 0)] is Pawn)
+                {
+                    Pawn pawn = (Pawn)piecePositions[BoardRender.GridReferenceToChessPosition(x, 0)];
+                    if (pawn.IsPawnInBackRow())
+                    {
+                        PromotePawn(BoardRender.GridReferenceToChessPosition(x, 0));
+                    }
+                }
+                else if (piecePositions.ContainsKey(BoardRender.GridReferenceToChessPosition(x, 0)) &&
+                         piecePositions[BoardRender.GridReferenceToChessPosition(x, 7)] is Pawn)
+                {
+                    Pawn pawn = (Pawn)piecePositions[BoardRender.GridReferenceToChessPosition(x, 7)];
+                    if (pawn.IsPawnInBackRow())
+                    {
+                        PromotePawn(BoardRender.GridReferenceToChessPosition(x, 7));
+                    }
+                }
+            }
+        }
+
+        private void PromotePawn(string position)
+        {
+            List<string> validPromotions = new List<string> { "q", "queen", "k", "knight", "r", "rook", "b", "bishop" };
+            string colour = isWhiteTurn ? "White" : "Black";
+            string userChoice = "";
+
+            Console.WriteLine(colour + " pawn has reached the back rank, what should it be promoted to?");
+            Console.WriteLine("OPTIONS: queen, knight, rook, bishop");
+            while (!validPromotions.Contains(userChoice = Console.ReadLine().Trim().ToLower()))
+            {
+                Console.WriteLine("That is not a valid option, please try again");
+            }
+
+            Pawn promotionPawn = (Pawn)piecePositions[position];
+            AbstractChessPiece promotedPiece;
+            switch (userChoice)
+            {
+                case "q":
+                case "queen":
+                    promotedPiece = new Queen(promotionPawn.colour, promotionPawn.position);
+                    break;
+                case "k":
+                case "knight":
+                    promotedPiece = new Knight(promotionPawn.colour, promotionPawn.position);
+                    break;
+                case "r":
+                case "rook":
+                    promotedPiece = new Rook(promotionPawn.colour, promotionPawn.position);
+                    break;
+                case "b":
+                case "bishop":
+                    promotedPiece = new Bishop(promotionPawn.colour, promotionPawn.position);
+                    break;
+                default:
+                    promotedPiece = promotionPawn;
+                    break;
+            }
+            piecePositions.Remove(position);
+            piecePositions.Add(position, promotedPiece);
+        }
+
         private void InitialiseBoard()
         {
             // Create all the pieces for both players and add them to the Dict
@@ -293,6 +362,6 @@ namespace Command_Line_Chess
             bool checkmate = king.IsInCheckmate();
             Console.WriteLine("The " + king.colour + " King is in Check = " + check);
             Console.WriteLine("The " + king.colour + " King is in Checkmate = " + checkmate);
-        }
+        }        
     }
 }

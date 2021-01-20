@@ -76,5 +76,18 @@ namespace Command_Line_Chess
             }
             this.possibleMoves = moves;
         }
+
+        public bool IsPawnInBackRow()
+        {
+            if (this.colour.Equals("b") && BoardRender.ChessPositionToGridReference(this.position).Item2 == 7)
+            {
+                return true;
+            }
+            else if (this.colour.Equals("w") && BoardRender.ChessPositionToGridReference(this.position).Item2 == 0)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
