@@ -44,7 +44,7 @@ There are currently 4 known missing features which are part of the standard game
 position it moved past, known as capturing "in passing". This can only occur on the move directly after the first pawn moved two spaces forward.
 Currently this is not counted as a valid move
 * __Castling__ - This is move which allows a Rook and King to move and switch places given specific circumstances. Currently not implemented.
-* __Pawn Promotion - COMPLETED ~~If a pawn reaches the back rank then it can be promoted to any other piece. Currently not implemented.~~
+* __Pawn Promotion - COMPLETED__ ~~If a pawn reaches the back rank then it can be promoted to any other piece. Currently not implemented.~~
 
 ## Possible Future Expansion
 It would be nice to add basic online functionality so that two users can play remotely.
