@@ -38,8 +38,8 @@ See the image below for a representation of how the chess positions relate to th
 ![Chess Board Positions and Co-Ordinates](https://github.com/ChristopherHaynes/Command-Line-Chess/blob/master/Command%20Line%20Chess/res/ChessBoardLayout.png?raw=true)
 
 ## Currently Missing Features
-There are currently 4 known missing features which are part of the standard game of chess. These are listed in order of priority.
-* __Cross Check__ - This is when a piece is check, it can escape check by also placing the opponent into check. Currently this is not a valid move.
+There are currently 3 known missing features which are part of the standard game of chess. These are listed in order of priority.
+* __Cross Check__ - This is when a piece is in check, it can escape check by also placing the opponent into check. Currently this is not a valid move.
 * __"En Passant"__ - If a pawn moves two spaces forward (as it each pawn can on its first move), then an opposition pawn can capture it in the
 position it moved past, known as capturing "in passing". This can only occur on the move directly after the first pawn moved two spaces forward.
 Currently this is not counted as a valid move
