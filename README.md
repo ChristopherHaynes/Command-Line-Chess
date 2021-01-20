@@ -3,7 +3,8 @@ This is a simple C# application to simulate chess games using the standard conso
 
 ## Gameplay
 When launched, a new game will begin on white's turn. After a move is made the turns will alternate between black and white until checkmate is achieved.
-At this point a new game will start when any key is pressed.
+At this point a new game will start when any key is pressed. **The console may not display the chess characters correctly with the default font "consolas".
+It is recommended to change your font to "NSimSun" at size "48" for the best results. Other True Type fonts will work, but not all have been tested.**
 
 ## User Input
 All the moves in game are described using chessboard positions which are described in the x-axis by a letter (a - h), and
