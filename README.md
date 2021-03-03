@@ -38,13 +38,13 @@ See the image below for a representation of how the chess positions relate to th
 ![Chess Board Positions and Co-Ordinates](https://github.com/ChristopherHaynes/Command-Line-Chess/blob/master/Command%20Line%20Chess/res/ChessBoardLayout.png?raw=true)
 
 ## Currently Missing Features
-There are currently 4 known missing features which are part of the standard game of chess. These are listed in order of priority.
-* __Cross Check__ - This is when a piece is check, it can escape check by also placing the opponent into check. Currently this is not a valid move.
+There are currently 3 known missing features which are part of the standard game of chess. These are listed in order of priority.
+* __Cross Check__ - This is when a piece is in check, it can escape check by also placing the opponent into check. Currently this is not a valid move.
 * __"En Passant"__ - If a pawn moves two spaces forward (as it each pawn can on its first move), then an opposition pawn can capture it in the
 position it moved past, known as capturing "in passing". This can only occur on the move directly after the first pawn moved two spaces forward.
 Currently this is not counted as a valid move
 * __Castling__ - This is move which allows a Rook and King to move and switch places given specific circumstances. Currently not implemented.
-* __Pawn Promotion__ - If a pawn reaches the back rank then it can be promoted to any other piece. Currently not implemented.
+* __Pawn Promotion - COMPLETED__ ~~If a pawn reaches the back rank then it can be promoted to any other piece. Currently not implemented.~~
 
 ## Possible Future Expansion
 It would be nice to add basic online functionality so that two users can play remotely.
