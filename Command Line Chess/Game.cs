@@ -258,7 +258,7 @@ namespace Command_Line_Chess
                 case "bishop":
                     promotedPiece = new Bishop(promotionPawn.colour, promotionPawn.position);
                     break;
-                default:
+                default: // This should be unreachable
                     promotedPiece = promotionPawn;
                     break;
             }
