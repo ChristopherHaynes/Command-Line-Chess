@@ -51,7 +51,7 @@ It would be nice to add basic online functionality so that two users can play re
 It would also be interesting to experiment with chess AI, both more traditional searching approaches (min-max, alpha-beta etc) as well as statistical and 
 ML approaches (Reinforcement learning, monto carlo etc).
 
-## Licence
+## License
 Copyright (c) 2015-2021 Chris Haynes and others
 
 Permission is hereby granted, free of charge, to any person obtaining
